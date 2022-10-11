@@ -15,24 +15,48 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('Card'),
-        ),
-        body: Center(
-          child: Container(
-            width: 200,
-            height: 200,
-            child: Card(
-              child: Text('Card'),
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10)),
-              color: Colors.green,
-              elevation: 50,
-              shadowColor: Colors.yellow, //border shadow
-            ),
+          appBar: AppBar(
+            title: Text('Column'),
           ),
-        ),
-      ),
+          body: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Container(
+                margin: EdgeInsets.all(10),
+                height: 100,
+                width: double.infinity,
+                alignment: Alignment.center,
+                child: Text(
+                  'Container 1',
+                ),
+                color: Colors.amberAccent,
+              ),
+              Container(
+                margin: EdgeInsets.all(10),
+                height: 100,
+                width: 200,
+                alignment: Alignment.center,
+                child: Text(
+                  'Container 2',
+                ),
+                color: Colors.red,
+              ),
+              Container(
+                margin: EdgeInsets.all(10),
+                height: 100,
+                width: 200,
+                alignment: Alignment.center,
+                child: Text(
+                  'Container 3',
+                ),
+                color: Colors.cyanAccent,
+              ),
+              Card(
+                child: Text('Hello'),
+              )
+            ],
+          )),
     );
   }
 }
