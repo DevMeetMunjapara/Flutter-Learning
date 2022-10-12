@@ -37,43 +37,18 @@ class MyHomePage extends StatelessWidget {
           title: Text('Column'),
         ),
         body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            Container(
-              margin: EdgeInsets.all(10),
-              height: 100,
-              width: double.infinity,
-              alignment: Alignment.center,
-              child: Text(
-                'Container 1',
+          children: transaction.map((e) {
+            return Card(
+              child: Row(
+                children: <Widget>[
+                  Text(e.id),
+                  Text(e.title),
+                  Text(e.amount.toString()),
+                  Text(e.date.toString()),
+                ],
               ),
-              color: Colors.amberAccent,
-            ),
-            Container(
-              margin: EdgeInsets.all(10),
-              height: 100,
-              width: 200,
-              alignment: Alignment.center,
-              child: Text(
-                'Container 2',
-              ),
-              color: Colors.red,
-            ),
-            Container(
-              margin: EdgeInsets.all(10),
-              height: 100,
-              width: 200,
-              alignment: Alignment.center,
-              child: Text(
-                'Container 3',
-              ),
-              color: Colors.cyanAccent,
-            ),
-            Card(
-              child: Text('Hello'),
-            )
-          ],
+            );
+          }).toList(),
         ));
     ;
   }
